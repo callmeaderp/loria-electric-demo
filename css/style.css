@@ -1424,6 +1424,9 @@ p + p { margin-top: 1rem; }
   .header-actions .header-phone, .header-actions .btn { display: none; }
   .header-inner { height: 65px; }
   .top-bar { display: none; }
+  /* Fix header overlap and ensure sticky behavior */
+  .site-header { position: fixed; width: 100%; top: 0; left: 0; }
+  body { padding-top: 66px; }
   .hero { min-height: auto; }
   .hero-content { padding: 3rem 0; }
   .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
@@ -1447,5 +1450,5 @@ p + p { margin-top: 1rem; }
   .features-grid { grid-template-columns: 1fr; }
   .hero-buttons, .hero-ctas { flex-direction: column; }
   .hero-buttons .btn, .hero-ctas .btn { width: 100%; text-align: center; }
-  .awards-grid { grid-template-columns: 1fr 1fr; }
+  .awards-grid { grid-template-columns: 1fr; }
 }
