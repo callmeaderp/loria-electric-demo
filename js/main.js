@@ -62,9 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
+      rootMargin: '0px 0px 50px 0px'
     });
     fadeElements.forEach(el => observer.observe(el));
+
+    // Reveal elements already in/near viewport after layout settles
+    requestAnimationFrame(() => {
+      fadeElements.forEach(el => {
+        if (!el.classList.contains('visible')) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight + 50) {
+            el.classList.add('visible');
+            observer.unobserve(el);
+          }
+        }
+      });
+    });
   } else {
     fadeElements.forEach(el => el.classList.add('visible'));
   }
