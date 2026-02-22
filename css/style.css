@@ -42,7 +42,7 @@
 
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -1444,6 +1444,8 @@ p + p { margin-top: 1rem; }
   .cta-banner-actions { width: 100%; }
   .emergency-callout-number { font-size: 1.5rem; }
   .services-sidebar { position: static; }
+  .cta-banner-content { min-width: 0; }
+  .specialty-card, .service-card, .testimonial-card { min-width: 0; }
 }
 
 @media (max-width: 480px) {
@@ -1451,4 +1453,6 @@ p + p { margin-top: 1rem; }
   .hero-buttons, .hero-ctas { flex-direction: column; }
   .hero-buttons .btn, .hero-ctas .btn { width: 100%; text-align: center; }
   .awards-grid { grid-template-columns: 1fr; }
+  .btn--full, .btn.btn--full { white-space: normal; }
+  .specialty-card .btn { white-space: normal; }
 }
