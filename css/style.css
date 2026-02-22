@@ -1446,6 +1446,16 @@ p + p { margin-top: 1rem; }
   .services-sidebar { position: static; }
   .cta-banner-content { min-width: 0; }
   .specialty-card, .service-card, .testimonial-card { min-width: 0; }
+  /* Fix: prevent services page grid children from forcing horizontal overflow */
+  .services-detail-content,
+  .services-sidebar,
+  .services-detail-grid,
+  .specialty-grid { min-width: 0; max-width: 100%; }
+  /* Fix: wrap button text at mobile widths to prevent overflow */
+  .btn--full, .btn.btn--full { white-space: normal; }
+  .specialty-card .btn { white-space: normal; }
+  /* Fix: clip any horizontal overflow from section content (iOS Safari) */
+  .section { overflow-x: hidden; }
 }
 
 @media (max-width: 480px) {
@@ -1453,6 +1463,4 @@ p + p { margin-top: 1rem; }
   .hero-buttons, .hero-ctas { flex-direction: column; }
   .hero-buttons .btn, .hero-ctas .btn { width: 100%; text-align: center; }
   .awards-grid { grid-template-columns: 1fr; }
-  .btn--full, .btn.btn--full { white-space: normal; }
-  .specialty-card .btn { white-space: normal; }
 }
